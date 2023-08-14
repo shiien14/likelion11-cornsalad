@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
+//효정 수정 버전
 @Entity
 @Getter
 @Setter
@@ -23,11 +23,14 @@ public class Board {
 
     //private Boolean DELETE_YN; 게시판에 삭제 여부가 필요할까요?
 
-    @Embedded
-    private Status USER_STATUS; // [ACTIVE, INACTIVE]
+    // @Embedded
+    //private Status USER_STATUS; // [ACTIVE, INACTIVE]
 
     @OneToMany(mappedBy = "board")
     private List<Channel> Channel = new ArrayList<>();
+
+    @OneToMany(mappedBy = "board")
+    private List<Channel_recommend> Channel_recommend = new ArrayList<>();
 
 
 }
