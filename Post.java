@@ -41,4 +41,7 @@ public class Post {
 
     @OneToMany(mappedBy = "post")
     private List<Hash_tag> Hash_tag = new ArrayList<>();
+
+    @OneToMany(mappedBy = "post")
+    private List<Comment> Comment = new ArrayList<>();
 }
