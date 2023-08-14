@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+//효정 수정 버전
 @Entity
 @Getter
 @Setter
@@ -14,9 +15,13 @@ public class Hash_tag {
     @Column(name = "TAG_ID")
     private Long ID;
 
-    private int TAG_COUNT;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "POST_ID")
+    private Post Post;
+    
+    //private int TAG_COUNT;
 
     private String TAG_CONTENTS;
 
-    private Type TAG_TYPE; // HASH, COMMENTS
+    //private Type TAG_TYPE; // HASH, COMMENTS
 }
