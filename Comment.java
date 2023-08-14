@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+
+//효정 수정 버전
 @Entity
 @Getter
 @Setter
@@ -20,8 +22,8 @@ public class Comment {
     private User USER;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CHANNEL_ID")
-    private Channel CHANNEL;
+    @JoinColumn(name = "Post_ID")
+    private Post Post;
 
     private String COMMENT_CONTENTS;
 
