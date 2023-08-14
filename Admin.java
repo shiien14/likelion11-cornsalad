@@ -28,4 +28,6 @@ public class Admin {
     private LocalDateTime MODIFY_DATE;
 
     private Status ADMIN_STATUS;
+
+    // channel 받아올 리스트 작성해야함
 }
