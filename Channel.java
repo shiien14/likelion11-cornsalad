@@ -6,6 +6,9 @@ import lombok.Setter;
 
 import java.awt.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 //효정 수정 버전
 @Entity
 @Getter
@@ -42,5 +45,6 @@ public class Channel {
     private Boolean DELETE_YN;
     private String TAG; // 리스트로 타입변경 ?
 
-    //CHANNEL_RECOMMEND 외래키 생성 필요
+    @OneToMany(mappedBy = "channel")
+    private List<Review> Review = new ArrayList<>();
 }
