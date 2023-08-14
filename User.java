@@ -22,9 +22,16 @@ public class User {
     private String USER_BIRTH_YEAR;
 
     @Embedded
-    private Status USER_STATUS;
+    private Status USER_STATUS; // [ACTIVE, INACTIVE]
 
     @OneToMany(mappedBy = "user")
-    private List<Comment> orders = new ArrayList<>();
+    private List<Comment> Comment = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user")
+    private List<User_log> User_logs = new ArrayList<>();
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Hash_tag TAG_ID; // 이부분 보완필요.. hashtag 단방향 연관을 만들고싶어요 ㅠㅅㅠ
+
 
 }
